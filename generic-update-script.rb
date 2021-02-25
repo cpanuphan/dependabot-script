@@ -179,7 +179,7 @@ dependencies.select(&:top_level?).each do |dep|
     assignees: [(ENV["PULL_REQUESTS_ASSIGNEE"] || ENV["GITLAB_ASSIGNEE_ID"])&.to_i],
     label_language: true,
     commit_message_options: {
-      commit_message: "#7459"
+      commit_message: ENV["COMMIT_MESSAGE"]&.to_i
     },
     # work_item: [(ENV["AZURE_WORK_ITEMS"])&.to_i],
   )
