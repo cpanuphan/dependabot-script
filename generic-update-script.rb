@@ -178,7 +178,10 @@ dependencies.select(&:top_level?).each do |dep|
     credentials: credentials,
     assignees: [(ENV["PULL_REQUESTS_ASSIGNEE"] || ENV["GITLAB_ASSIGNEE_ID"])&.to_i],
     label_language: true,
-    work_item: [(ENV["AZURE_WORK_ITEMS"])&.to_i],
+    commit_message_options: {
+      commit_message: "#7459"
+    },
+    # work_item: [(ENV["AZURE_WORK_ITEMS"])&.to_i],
   )
   pull_request = pr_creator.create
   puts " submitted"
